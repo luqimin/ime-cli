@@ -37,13 +37,15 @@
     "cross-spawn": "^6.0.5",
     "extend": "^3.0.2",
     "fs-extra": "^7.0.1",
-    "ime-pack": "0.0.5",
+    "ime-pack": "^0.0.6",
+    "lodash": "^4.17.11",
     "nodemon": "^1.18.9"
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.0",
     "@types/extend": "^3.0.0",
     "@types/fs-extra": "^5.0.4",
+    "@types/lodash": "^4.14.119",
     "@types/webpack": "^4.4.22",
     "rimraf": "^2.6.3",
     "tslint": "^5.12.0",

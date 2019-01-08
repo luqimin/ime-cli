@@ -4,6 +4,7 @@
 import * as path from 'path';
 import * as nodemon from 'nodemon';
 import * as extend from 'extend';
+import { debounce } from 'lodash';
 
 import { BaseClass } from '../base';
 import log from '../util/log';
@@ -37,17 +38,19 @@ class NodemonServer extends BaseClass<any> {
         // 启动nodemon
         nodemon(nodemonConfig);
 
+        const restartLog = debounce(() => {
+            log.warn('「server」重启中...');
+        });
+
         nodemon
             .on('start', () => {
-                log.success('Node服务已开启');
+                log.success('「server」已开启');
             })
             .on('quit', () => {
-                log.info('Node server 已退出');
+                log.info('「server」已关闭');
                 process.exit();
             })
-            .on('restart', (files: any[]) => {
-                log.warn(`${files}修改, Node server重启中`);
-            });
+            .on('restart', restartLog);
     }
 }
 

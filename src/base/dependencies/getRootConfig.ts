@@ -42,7 +42,7 @@ export interface IMEConfig {
 }
 
 export interface Root {
-    path?: string;
+    rootPath?: string;
     clientPath?: string;
     serverPath?: string;
     clientSourcePath?: string;
@@ -76,7 +76,7 @@ export const getRootConfig = (): Root | null => {
     }
 
     const root: Root = {
-        path: rootPath,
+        rootPath,
         config,
         clientPath: path.join(rootPath, 'build/client'),
         serverPath: path.join(rootPath, 'build/server'),

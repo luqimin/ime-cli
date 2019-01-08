@@ -138,7 +138,7 @@ export abstract class BaseClass<P> implements IMEBase<P> {
             const root = getRootConfig()!;
 
             // 将ime相关路径写进环境变量
-            root.path && (process.env.IME_PATH = root.path);
+            root.rootPath && (process.env.IME_PATH = root.rootPath);
             root.clientPath && (process.env.IME_CLIENT_PATH = root.clientPath);
             root.serverPath && (process.env.IME_SERVER_PATH = root.serverPath);
 
