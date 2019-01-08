@@ -1,0 +1,14 @@
+.vscode
+.*.swp
+._*
+.DS_Store
+.git
+.gitignore
+
+npm-debug.log
+node_modules
+
+src
+test
+tsconfig.json
+tslint.json
