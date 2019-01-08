@@ -1,6 +1,6 @@
 {
   "name": "ime-isomorphic",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react isomorphic tools for ime",
   "main": "index.js",
   "bin": {
