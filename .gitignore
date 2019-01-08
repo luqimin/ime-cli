@@ -38,6 +38,7 @@ jspm_packages/
 
 # TypeScript v1 declaration files
 typings/
+types/
 
 # Optional npm cache directory
 .npm
@@ -59,3 +60,16 @@ typings/
 
 # next.js build output
 .next
+
+# ide
+.vscode
+.idea
+.*.swp
+._*
+.DS_Store
+.git
+
+*.js
+!*.test.js
+!src/
+!test/

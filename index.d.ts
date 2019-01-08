@@ -1,0 +1,8 @@
+declare module '*package.json' {
+    export const name: string;
+    export const version: string;
+}
+
+declare module 'nodemon';
+declare module 'download-git-repo';
+declare module 'clui';

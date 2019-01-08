@@ -1,0 +1,52 @@
+{
+  "name": "ime-isomorphic",
+  "version": "1.0.0",
+  "description": "react isomorphic tools for ime",
+  "main": "index.js",
+  "bin": {
+    "ime": "./bin/ime.js"
+  },
+  "scripts": {
+    "start": "tsc --watch --pretty",
+    "lint": "tslint -p ./",
+    "clean": "rimraf bin base config lib util types",
+    "prebuild": "npm run lint && npm run clean",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luqimin/ime-isomorphic.git"
+  },
+  "keywords": [
+    "ime",
+    "isomorphic"
+  ],
+  "author": "luqimin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luqimin/ime-isomorphic/issues"
+  },
+  "homepage": "https://github.com/luqimin/ime-isomorphic#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "cross-spawn": "^6.0.5",
+    "extend": "^3.0.2",
+    "fs-extra": "^7.0.1",
+    "nodemon": "^1.18.9"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.0",
+    "@types/extend": "^3.0.0",
+    "@types/fs-extra": "^5.0.4",
+    "@types/webpack": "^4.4.22",
+    "ime-pack": "0.0.5",
+    "rimraf": "^2.6.3",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  }
+}
