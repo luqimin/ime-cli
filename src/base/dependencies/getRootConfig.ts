@@ -4,6 +4,7 @@
 
 import * as path from 'path';
 import * as fs from 'fs-extra';
+import { IMEPackConfig } from 'ime-pack';
 
 import { readFile } from '../../util/readFile';
 import { configNames } from '../../config/const';
@@ -11,22 +12,7 @@ import { configNames } from '../../config/const';
 /**
  * IME配置项
  */
-export interface IMEConfig {
-    /**
-     * 是否开启调试模式
-     */
-    debug?: boolean;
-
-    /**
-     * 版本号，生产环境编译时，静态文件名将会携带版本号
-     */
-    version?: string;
-
-    /**
-     * less modifyVars配置
-     */
-    lessModifyVars?: { [key: string]: string };
-
+export interface IMEConfig extends IMEPackConfig {
     /**
      * nodemon配置
      */
@@ -80,7 +66,7 @@ export const getRootConfig = (): Root | null => {
         config,
         clientPath: path.join(rootPath, 'build/client'),
         serverPath: path.join(rootPath, 'build/server'),
-        clientSourcePath: path.join(rootPath, 'server'),
+        clientSourcePath: path.join(rootPath, 'client'),
         serverSourcePath: path.join(rootPath, 'server'),
     };
 

@@ -1,5 +1,5 @@
-import { Pack } from 'ime-pack';
 import { BaseClass } from '../base';
+import creatPack from '../util/packFactory';
 
 interface Params {
     dllOnly: boolean;
@@ -11,8 +11,7 @@ class Builder extends BaseClass<Params> {
     }
 
     protected async taskRunning() {
-        const { rootPath } = this.runtime;
-        const pack = new Pack({ context: rootPath! });
+        const pack = creatPack(this.runtime);
 
         await pack.compileClientDll();
 

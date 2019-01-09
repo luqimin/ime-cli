@@ -1,13 +1,13 @@
 import * as fs from 'fs-extra';
-import { Pack } from 'ime-pack';
 import { BaseClass } from '../base';
 import Server from '../lib/server';
 import Builder from '../lib/build';
+import creatPack from '../util/packFactory';
 
 class Watcher extends BaseClass<any> {
     protected async taskRunning() {
-        const { rootPath, clientPath, serverPath } = this.runtime;
-        const pack = new Pack({ context: rootPath! });
+        const { clientPath, serverPath } = this.runtime;
+        const pack = creatPack(this.runtime);
 
         if (!fs.pathExistsSync(clientPath!) || !fs.pathExistsSync(serverPath!)) {
             // 打包所需文件
