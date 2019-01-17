@@ -12,12 +12,9 @@ class Watcher extends BaseClass<any> {
         if (!fs.pathExistsSync(clientPath!) || !fs.pathExistsSync(serverPath!)) {
             // 打包所需文件
             await new Builder({ dllOnly: true }).run();
-            await pack.watchClient();
-            await pack.watchSSR();
-        } else {
-            pack.watchClient();
-            pack.watchSSR();
         }
+
+        await Promise.all([pack.watchClient(), pack.watchSSR()]);
 
         pack.watchServerStatic();
         pack.watchServer();
