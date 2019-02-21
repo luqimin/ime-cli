@@ -69,6 +69,7 @@ types/
 .DS_Store
 .git
 
+package-lock.json
 *.js
 !*.test.js
 !src/
