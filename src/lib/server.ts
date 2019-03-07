@@ -16,6 +16,12 @@ class NodemonServer extends BaseClass<any> {
         // 获取node工程入口路径
         const entryPath: string = path.join(serverPath, 'index.js');
 
+        // 不使用nodemon，适用于自身将检测文件变动并重启服务的应用，例如eggjs
+        if (this.config.nodemon && (this.config.nodemon === null || this.config.nodemon.enable === false)) {
+            require(entryPath);
+            return;
+        }
+
         // 合并nodemon配置
         let nodemonConfig = {};
         nodemonConfig = extend(

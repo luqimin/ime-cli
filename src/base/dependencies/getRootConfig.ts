@@ -17,6 +17,7 @@ export interface IMEConfig extends IMEPackConfig {
      * nodemon配置
      */
     nodemon?: {
+        enable?: boolean;
         script?: string;
         watch?: string[];
         ignore?: string[];
