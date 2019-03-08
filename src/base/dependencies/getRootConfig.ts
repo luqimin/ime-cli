@@ -26,6 +26,13 @@ export interface IMEConfig extends IMEPackConfig {
         ext?: string;
         stdout?: boolean;
     };
+
+    /**
+     * 启用egg-ts-helper
+     */
+    ets?: {
+        enable?: boolean;
+    };
 }
 
 export interface Root {
