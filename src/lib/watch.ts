@@ -18,13 +18,15 @@ class Watcher extends BaseClass<any> {
         }
 
         // egg-ts-helper
-        new ETS().run();
+        await new ETS().run();
+
+        // 服务端资源文件
+        pack.watchServerStatic();
 
         log.info('项目运行前需要打包「client、ssr」，请稍后...');
         await Promise.all([pack.watchClient(), pack.watchSSR()]);
         log.success('打包「client、ssr」结束');
 
-        pack.watchServerStatic();
         pack.watchServer();
 
         // 启动服务

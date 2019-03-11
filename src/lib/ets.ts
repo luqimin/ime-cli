@@ -6,7 +6,7 @@ import * as spawn from 'cross-spawn';
 import { BaseClass } from '../base';
 
 class ETS extends BaseClass<any> {
-    protected taskRunning() {
+    protected async taskRunning() {
         const { config, rootPath } = this.runtime;
 
         if (config && config.ets && config.ets.enable !== false) {
