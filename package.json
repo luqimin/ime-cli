@@ -27,6 +27,9 @@
   ],
   "author": "luqimin",
   "license": "ISC",
+  "publishConfig": {
+    "registry": "http://r.sogou/"
+  },
   "bugs": {
     "url": "https://github.com/luqimin/ime-isomorphic/issues"
   },
@@ -37,7 +40,7 @@
     "cross-spawn": "^6.0.5",
     "extend": "^3.0.2",
     "fs-extra": "^7.0.1",
-    "ime-pack": "^1.1.1",
+    "ime-pack": "^1.1.2",
     "lodash": "^4.17.11",
     "nodemon": "^1.18.9"
   },
